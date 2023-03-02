@@ -1,9 +1,6 @@
 package com.designpatterns;
 
-import com.designpatterns.duck.Duck;
-import com.designpatterns.duck.FlyRocketPawered;
-import com.designpatterns.duck.MallardDuck;
-import com.designpatterns.duck.ModelDuck;
+import com.designpatterns.duck.*;
 
 public class MiniDuckSimulator {
     public static void main(String[] args) {
@@ -16,5 +13,12 @@ public class MiniDuckSimulator {
         modelDuck.setFlyBehavior(new FlyRocketPawered());
         modelDuck.performFly();
 
+
+      System.out.println("============");
+        DuckCall duckCall = new DuckCall();
+        duckCall.setQuackBehavior(new Quack());
+        duckCall.performQuack();
+        duckCall.setQuackBehavior(new MuteQuack());
+        duckCall.performQuack();
     }
 }
